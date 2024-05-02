@@ -1,0 +1,66 @@
+---
+import Github from '../icons/Github.astro'
+import Link from '../icons/Link.astro'
+import ElementoDeContacto from './ElementoDeContacto.astro'
+
+interface Props{
+    img: string,
+    nombre: string,
+    descripcion: string,
+    github: string,
+    tecnologias: string[] ,
+    pagina?: string,
+    paginaExplicacion?: string,
+
+}
+
+const {img , nombre , descripcion,tecnologias ,github , pagina , paginaExplicacion} = Astro.props
+---
+
+
+
+<li class="text-pretty w-xl flex flex-col gap-6 items-center justify-center flex-wrap ">
+    <div class="mb-10 ms-4">
+        <div class="flex  flex-wrap gap-2">
+            <div class="flex gap-4 flex-col w-96">
+                <h3 class="text-xl font-semibold text-sky-400 ">{nombre}</h3>
+                <p class="mb-4  text-base font-normal text-gray-300 text-pretty w-96 ">{descripcion}</p>
+                <ol class="flex gap-5">
+                    {
+                        tecnologias.map(elemento => (
+                            <li class="bg-orange-300 text-black border rounded-xl border-black py-2 px-4">
+                                <p>{elemento}</p>
+                            </li>
+                        ))
+                    }
+                </ol>
+                
+                <ol class="flex  gap-9">
+                    <ElementoDeContacto href={github} texto=''> <Github /></ElementoDeContacto>
+                    {
+                        pagina && (
+                        <ElementoDeContacto href={pagina} texto=""><Link /> </ElementoDeContacto>
+                        )
+            
+                    }
+                    {
+                        paginaExplicacion && (
+                        <ElementoDeContacto href={paginaExplicacion} texto='Mas +'>  </ElementoDeContacto>
+                        )
+            
+                    }
+                </ol>
+               
+                
+            </div>
+            <div>
+                <img src={img} alt=`visualizacion del proyecto ${nombre}` class="rounded w-[400px] aspect-video">
+             
+            </div>
+        </div>
+    </li>
+    
+        
+
+
+   

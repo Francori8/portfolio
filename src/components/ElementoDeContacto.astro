@@ -1,0 +1,20 @@
+---
+interface Props{
+    href: string,
+    texto: string,
+   
+}
+
+const {href, texto} = Astro.props
+import TextoResaltado from './TextoResaltado.astro'
+---
+
+<li class="flex justify-center items-center">
+    <a href= {href} target="_blanck" rel="noopener"  class="text-white flex flex-row gap-2  ">
+        <TextoResaltado >
+            {texto}
+            <slot/>
+        </TextoResaltado>
+    </a>
+    
+</li>

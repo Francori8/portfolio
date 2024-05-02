@@ -1,0 +1,49 @@
+---
+const PROYECTOS = [
+    {
+        img: "../public/repositorio.webp",
+        nombre: "Repositorio Francori",
+        descripcion: "Pagina web para tener todos los archivos  y videos utilizados en la Universidad de Quilmes en la licenciatura de Informatica",
+        github:"https://github.com/Francori8/repositorioFrancori",
+        pagina:"https://francori8.github.io/repositorioFrancori/",
+        paginaExplicacion:"",
+        tecnologias:['HTML', 'CSS', 'JS']
+    },
+    {
+        img: "../public/calendario.webp",
+        nombre: "Calendario Dinamico",
+        descripcion: "Pagina web para ser capaces de organizar horarios de las materias, siendo capaces de poner mas de una comision por materia para probar las posibilidades mientras se pinta en una grilla o utilizar las de la Licenciatura de informatica ",
+        github:"https://github.com/Francori8/calendarioDinamico",
+        pagina:"https://francori8.github.io/calendarioDinamico",
+        paginaExplicacion:"",
+        tecnologias:['HTML', 'CSS', 'JS']
+    },
+    {
+        img: "../public/conjunto.webp",
+        nombre: "Conjunto Mandelbrot",
+        descripcion: "Codigo realizado como proyecto de la materia Programacion Concurrente un conjunto de mandelbrot concurrentemente con threads, generando la imagen con el resultado final ",
+        github:"https://github.com/Francori8/conjuntoMandelBroot",
+        tecnologias:['JAVA']
+    }
+
+    
+]
+
+
+
+import ProyectoItem from '../components/ProyectoItem.astro'
+
+---
+
+<section class="mt-40" id="proyectos">
+    <h3 class="mb-4 ms-4 text-xl font-bold text-red-400">Proyectos</h3>
+    <ol >
+    {
+        PROYECTOS.map((proyecto) => (
+            <div>
+                <ProyectoItem {... proyecto} />
+            </div> 
+        ))
+    }
+    </ol>
+</section>

@@ -1,0 +1,29 @@
+---
+interface Props{
+    tiempo: string,
+    titulo:string,
+    ubicacion: string,
+    descripcion:string,
+    descripcion2?:string
+}
+
+const {tiempo, titulo, ubicacion, descripcion, descripcion2} = Astro.props
+---
+<li class="mb-10 ms-4">
+    <div class="flex  flex-wrap">
+        <div class="flex gap-2 flex-col w-96">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+            <h3 class="text-base font-semibold text-sky-400 ">{titulo}</h3>
+            <h3 class="text-lg font-semibold text-white ">{ubicacion}</h3>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 ">{tiempo}</time>
+        </div>
+        <div>
+            <p class="mb-4  text-base font-normal text-gray-300 text-pretty w-96 ">{descripcion}</p>
+            {
+                descripcion2 && (
+                    <p class="mb-4  text-base font-normal text-gray-300 text-wrap w-96 ">{descripcion2}</p>
+                )
+            }
+        </div>
+    </div>
+</li>
