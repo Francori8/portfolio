@@ -1,18 +1,12 @@
 ---
 import Github from '../icons/Github.astro'
 import Link from '../icons/Link.astro'
+
+
+
 import ElementoDeContacto from './ElementoDeContacto.astro'
 
-interface Props{
-    img: string,
-    nombre: string,
-    descripcion: string,
-    github: string,
-    tecnologias: string[] ,
-    pagina?: string,
-    paginaExplicacion?: string,
 
-}
 
 const {img , nombre , descripcion,tecnologias ,github , pagina , paginaExplicacion} = Astro.props
 ---
@@ -27,9 +21,10 @@ const {img , nombre , descripcion,tecnologias ,github , pagina , paginaExplicaci
                 <p class="mb-4  text-base font-normal text-gray-300 text-pretty ">{descripcion}</p>
                 <ol class="flex gap-5">
                     {
-                        tecnologias.map(elemento => (
-                            <li class="bg-orange-300 text-black border rounded-xl border-black py-2 px-4">
-                                <p>{elemento}</p>
+                        
+                        tecnologias.map((elemento) => (                            
+                            <li class="py-2 px-4">
+                               <elemento.icon/>   
                             </li>
                         ))
                     }

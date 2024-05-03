@@ -1,11 +1,28 @@
 ---
+import HTML from '../icons/HTML.astro'
+import CSS  from '../icons/CSS.astro'
+import JAVASCRIPT from '../icons/JAVASCRIPT.astro'
+import JAVA from '../icons/JAVA.astro'
+import TAILWIND from '../icons/TAILWIND.astro'
+import ASTRO from '../icons/ASTRO.astro'
+import HASKELL from '../icons/HASKELL.astro'
+import SMALLTALK from '../icons/SMALLTALK.astro'
+
+const etiqueta = {
+    HTML:{icon : HTML},
+    CSS: {icon : CSS},
+    JAVASCRIPT : {icon : JAVASCRIPT},
+    JAVA : {icon : JAVA},
+}
+
+
 const PROYECTOS = [
     {
         img: "/repositorio.webp",
         nombre: "Repositorio Francori",
         descripcion: "Pagina web para tener todos los archivos  y videos utilizados en la Universidad de Quilmes en la licenciatura de Informatica",
         github:"https://github.com/Francori8/repositorioFrancori",
-        tecnologias:['HTML', 'CSS', 'JS']
+        tecnologias:[etiqueta.HTML, etiqueta.CSS, etiqueta.JAVASCRIPT]
     },
     {
         img: "/calendario.webp",
@@ -13,14 +30,14 @@ const PROYECTOS = [
         descripcion: "Pagina web para ser capaces de organizar horarios de las materias, siendo capaces de poner mas de una comision por materia para probar las posibilidades mientras se pinta en una grilla o utilizar las de la Licenciatura de informatica ",
         github:"https://github.com/Francori8/calendarioDinamico",
         pagina:"https://francori8.github.io/calendarioDinamico",
-        tecnologias:['HTML', 'CSS', 'JS']
+        tecnologias:[etiqueta.HTML, etiqueta.CSS, etiqueta.JAVASCRIPT]
     },
     {
         img: "/conjunto.webp",
         nombre: "Conjunto Mandelbrot",
         descripcion: "Codigo realizado como proyecto de la materia Programacion Concurrente un conjunto de mandelbrot concurrentemente con threads, generando la imagen con el resultado final ",
         github:"https://github.com/Francori8/conjuntoMandelBroot",
-        tecnologias:['JAVA']
+        tecnologias:[etiqueta.JAVA]
     }
 
     
